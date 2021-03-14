@@ -19,20 +19,20 @@ cursor after <user.draft_anchor>:
   user.draft_position_caret("{draft_anchor}", 1)
 
 # Select a whole word
-select <user.draft_anchor>:
+mark <user.draft_anchor>:
   user.draft_select("{draft_anchor}")
 
 # Select a range of words
-select <user.draft_anchor> through <user.draft_anchor>:
+mark <user.draft_anchor> through <user.draft_anchor>:
   user.draft_select("{draft_anchor_1}", "{draft_anchor_2}")
 
 # Delete a word
-clear <user.draft_anchor>:
+(clear | delete) <user.draft_anchor>:
   user.draft_select("{draft_anchor}", "", 1)
   key(backspace)
 
 # Delete a range of words
-clear <user.draft_anchor> through <user.draft_anchor>:
+(clear | delete) <user.draft_anchor> through <user.draft_anchor>:
   user.draft_select("{draft_anchor}", "{draft_anchor}", 1)
   key(backspace)
 
